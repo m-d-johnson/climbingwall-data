@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
+  "type": "array",
   "properties": {
     "walls": {
       "type": "array",
@@ -61,16 +61,16 @@
     "facilities": {
       "type": "object",
       "properties": {
-        "parking": { "type": ["boolean"] },
-        "lgbtq_group": { "type": ["boolean"] },
-        "womens_group": { "type": ["boolean"] },
+        "parking": { "type": ["boolean", "null"] },
+        "lgbtq_group": { "type": ["boolean", "null"] },
+        "womens_group": { "type": ["boolean", "null"] },
         "step_free_venue": { "type": ["boolean", "null"] },
-        "gender_neutral_changing": { "type": ["boolean"] },
-        "gender_neutral_toilets": { "type": ["boolean"] },
-        "single_occupancy_showers": { "type": ["boolean"] },
-        "single_occupancy_changing": { "type": ["boolean"] },
+        "gender_neutral_changing": { "type": ["boolean", "null"] },
+        "gender_neutral_toilets": { "type": ["boolean", "null"] },
+        "single_occupancy_showers": { "type": ["boolean", "null"] },
+        "single_occupancy_changing": { "type": ["boolean", "null"] },
         "cycle_storage": { "type": "string" },
-        "gear_shop": { "type": ["boolean"] },
+        "gear_shop": { "type": ["boolean", "null"] },
         "cafe": { "type": "string" }
       }
     },
@@ -182,21 +182,21 @@
     "types_of_climbing": {
       "type": "object",
       "properties": {
-        "bouldering": { "type": ["boolean"] },
-        "top_rope": { "type": ["boolean"] },
-        "lead": { "type": ["boolean"] }
+        "bouldering": { "type": ["boolean", "null"] },
+        "top_rope": { "type": ["boolean", "null"] },
+        "lead": { "type": ["boolean", "null"] }
       }
     },
     "equipment_hire": {
       "type": "object",
       "properties": {
-        "harness": { "type": ["boolean"] },
+        "harness": { "type": ["boolean", "null"] },
         "harness_price": { "type": "number" },
-        "belay_device": { "type": ["boolean"] },
+        "belay_device": { "type": ["boolean", "null"] },
         "belay_device_price": { "type": "number" },
-        "shoes": { "type": ["boolean"] },
+        "shoes": { "type": ["boolean", "null"] },
         "shoes_price": { "type": "number" },
-        "chalk_bag": { "type": ["boolean"] },
+        "chalk_bag": { "type": ["boolean", "null"] },
         "chalk_bag_price": { "type": "number" }
       }
     },
