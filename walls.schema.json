@@ -1,0 +1,222 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "walls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "address": { "$ref": "#/definitions/address" },
+          "location": { "$ref": "#/definitions/location" },
+          "facilities": { "$ref": "#/definitions/facilities" },
+          "opening_times": { "$ref": "#/definitions/opening_times" },
+          "transport_links": { "$ref": "#/definitions/transport_links" },
+          "contact_details": { "$ref": "#/definitions/contact_details" },
+          "types_of_climbing": { "$ref": "#/definitions/types_of_climbing" },
+          "equipment_hire": { "$ref": "#/definitions/equipment_hire" },
+          "entry_prices": { "$ref": "#/definitions/entry_prices" },
+          "social_media": { "$ref": "#/definitions/social_media" }
+        },
+        "required": [
+          "name",
+          "address",
+          "location",
+          "facilities",
+          "opening_times",
+          "transport_links",
+          "contact_details",
+          "types_of_climbing",
+          "equipment_hire",
+          "entry_prices",
+          "social_media"
+        ]
+      }
+    }
+  },
+  "required": ["walls"],
+  "additionalProperties": false,
+  "definitions": {
+    "address": {
+      "type": "object",
+      "properties": {
+        "street_address": { "type": "string" },
+        "locality": { "type": "string" },
+        "city": { "type": "string" },
+        "postcode": { "type": "string" }
+      },
+      "required": ["street_address", "city", "postcode"]
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": { "type": "string" },
+        "longitude": { "type": "string" },
+        "open_street_map_uri": { "type": "string" },
+        "google_maps_uri": { "type": "string" }
+      },
+      "required": ["latitude", "longitude"]
+    },
+    "facilities": {
+      "type": "object",
+      "properties": {
+        "parking": { "type": ["boolean"] },
+        "lgbtq_group": { "type": ["boolean"] },
+        "womens_group": { "type": ["boolean"] },
+        "step_free_venue": { "type": ["boolean", "null"] },
+        "gender_neutral_changing": { "type": ["boolean"] },
+        "gender_neutral_toilets": { "type": ["boolean"] },
+        "single_occupancy_showers": { "type": ["boolean"] },
+        "single_occupancy_changing": { "type": ["boolean"] },
+        "cycle_storage": { "type": "string" },
+        "gear_shop": { "type": ["boolean"] },
+        "cafe": { "type": "string" }
+      }
+    },
+    "opening_times": {
+      "type": "object",
+      "properties": {
+        "opening_hours_vary_during_school_holidays": { "type": "boolean" },
+        "monday": {
+          "type": "object",
+          "properties": {
+            "open": { "type": "string" },
+            "close": { "type": "string" },
+            "peak_hours_start": { "type": "string" },
+            "peak_hours_end": { "type": "string" }
+          }
+        },
+        "tuesday": {
+          "type": "object",
+          "properties": {
+            "open": { "type": "string" },
+            "close": { "type": "string" },
+            "peak_hours_start": { "type": "string" },
+            "peak_hours_end": { "type": "string" }
+          }
+        },
+        "wednesday": {
+          "type": "object",
+          "properties": {
+            "open": { "type": "string" },
+            "close": { "type": "string" },
+            "peak_hours_start": { "type": "string" },
+            "peak_hours_end": { "type": "string" }
+          }
+        },
+        "thursday": {
+          "type": "object",
+          "properties": {
+            "open": { "type": "string" },
+            "close": { "type": "string" },
+            "peak_hours_start": { "type": "string" },
+            "peak_hours_end": { "type": "string" }
+          }
+        },
+        "friday": {
+          "type": "object",
+          "properties": {
+            "open": { "type": "string" },
+            "close": { "type": "string" },
+            "peak_hours_start": { "type": "string" },
+            "peak_hours_end": { "type": "string" }
+          }
+        },
+        "saturday": {
+          "type": "object",
+          "properties": {
+            "open": { "type": "string" },
+            "close": { "type": "string" },
+            "peak_hours_start": { "type": "string" },
+            "peak_hours_end": { "type": "string" }
+          }
+        },
+        "sunday": {
+          "type": "object",
+          "properties": {
+            "open": { "type": "string" },
+            "close": { "type": "string" },
+            "peak_hours_start": { "type": "string" },
+            "peak_hours_end": { "type": "string" }
+          }
+        }
+      }
+    },
+    "transport_links": {
+      "type": "object",
+      "properties": {
+        "nearest_tube_station": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "walking_distance_metres": { "type": "string" },
+            "station_is_step_free": { "type": "string" }
+          }
+        },
+        "nearest_mainline_rail": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "walking_distance": { "type": "string" },
+            "station_is_step_free": { "type": "string" }
+          }
+        },
+        "nearest_step_free_public_transport": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "walking_distance": { "type": "string" }
+          }
+        }
+      }
+    },
+    "contact_details": {
+      "type": "object",
+      "properties": {
+        "telephone": { "type": "string" },
+        "email": { "type": "string" },
+        "website": { "type": "string" }
+      }
+    },
+    "types_of_climbing": {
+      "type": "object",
+      "properties": {
+        "bouldering": { "type": ["boolean"] },
+        "top_rope": { "type": ["boolean"] },
+        "lead": { "type": ["boolean"] }
+      }
+    },
+    "equipment_hire": {
+      "type": "object",
+      "properties": {
+        "harness": { "type": ["boolean"] },
+        "harness_price": { "type": "number" },
+        "belay_device": { "type": ["boolean"] },
+        "belay_device_price": { "type": "number" },
+        "shoes": { "type": ["boolean"] },
+        "shoes_price": { "type": "number" },
+        "chalk_bag": { "type": ["boolean"] },
+        "chalk_bag_price": { "type": "number" }
+      }
+    },
+    "entry_prices": {
+      "type": "object",
+      "properties": {
+        "single_climb_adult_peak": { "type": "number" },
+        "single_climb_adult_off_peak": { "type": "number" },
+        "single_climb_concession": { "type": "number" }
+      }
+    },
+    "social_media": {
+      "type": "object",
+      "properties": {
+        "instagram": { "type": "string" },
+        "facebook": { "type": "string" },
+        "twitter": { "type": "string" },
+        "you_tube": { "type": "string" },
+        "tik_tok": { "type": "string" }
+      }
+    }
+  }
+}
